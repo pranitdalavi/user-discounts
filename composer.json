@@ -1,0 +1,35 @@
+{
+    "name": "pranitdalavi/user-discounts",
+    "description": "A Laravel package for user-level discounts with deterministic stacking.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pranit Dalavi",
+            "email": "pranit.dalavi98@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PranitDalavi\\UserDiscounts\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0",
+        "illuminate/database": "^10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PranitDalavi\\UserDiscounts\\UserDiscountsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
