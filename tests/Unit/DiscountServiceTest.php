@@ -13,7 +13,7 @@ class DiscountServiceTest extends TestCase
 
     protected function getPackageProviders($app)
     {
-        return ['Acme\UserDiscounts\UserDiscountsServiceProvider'];
+        return ['PranitDalavi\UserDiscounts\UserDiscountsServiceProvider'];
     }
 
     /** @test */
