@@ -28,6 +28,11 @@ class UserDiscountsServiceProvider extends ServiceProvider
             __DIR__ . '/Config/discounts.php' => config_path('discounts.php'),
         ], 'config');
 
+        // Publish tests to the application's tests/Unit/UserDiscounts folder
+        $this->publishes([
+            __DIR__ . '/../tests/' => base_path('tests/Unit/UserDiscounts'),
+        ], 'tests');
+
         // Publish migrations to the application's database/migrations folder
         $this->publishes([
             __DIR__ . '/../database/migrations/' => database_path('migrations'),
