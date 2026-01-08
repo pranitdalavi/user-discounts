@@ -6,6 +6,8 @@ use Orchestra\Testbench\TestCase;
 use PranitDalavi\UserDiscounts\Services\DiscountService;
 use PranitDalavi\UserDiscounts\Models\Discount;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class DiscountServiceTest extends TestCase
 {
@@ -15,6 +17,8 @@ class DiscountServiceTest extends TestCase
     {
         return ['PranitDalavi\UserDiscounts\UserDiscountsServiceProvider'];
     }
+
+    // Rely on application's migrations and Testbench's RefreshDatabase
 
     /** @test */
     public function usage_cap_is_enforced()

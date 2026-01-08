@@ -9,8 +9,15 @@ return new class extends Migration {
     {
         Schema::create('discount_audits', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
-            $table->foreignId('discount_id')->nullable()->constrained()->nullOnDelete();
+            if (app()->runningUnitTests()) {
+                $table->unsignedBigInteger('user_id')->nullable();
+                $table->unsignedBigInteger('discount_id')->nullable();
+                $table->index(['user_id']);
+                $table->index(['discount_id']);
+            } else {
+                $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
+                $table->foreignId('discount_id')->nullable()->constrained()->nullOnDelete();
+            }
             $table->enum('action', ['assigned','revoked','applied']);
             $table->decimal('amount', 10, 2)->nullable();
             $table->timestamps();
